@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700&display=swap");
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito", sans-serif;
+}
+
+input,
+textarea,
+button {
+    font-family: "Nunito", sans-serif;
+}
+
+/* header */
+header {
+    background-color: aliceblue;
+}
+
+header h1 {
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* menu items */
+.menu_items {
+    margin-top: 50px;
+}
+
+/* item */
+.item {
+    background-color: azure;
+    padding: 30px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+        "title time"
+        "amount button";
+    grid-gap: 20px;
+    border: 2px solid black;
+}
+
+.item > * {
+    margin: 0;
+}
+
+.item_title {
+    grid-area: title;
+}
+
+.item_time {
+    grid-area: time;
+    letter-spacing: 2px;
+    justify-self: center;
+}
+
+.item_amount {
+    grid-area: amount;
+    align-self: center;
+}
+
+.item_amount .number {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.item_amount button {
+    width: 40%;
+    padding: 10px 0;
+}
+
+.item_button {
+    grid-area: button;
+    padding: 12px 15px;
+    border-radius: 50px;
+    background-color: aquamarine;
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+}
