@@ -188,6 +188,7 @@ function deleteItem() {
             deleteButton.parentElement.remove();
             addButtons.forEach((addButton) => {
                 if (addButton.dataset.id === deleteButton.dataset.id) {
+                    addButton.previousElementSibling.firstElementChild.nextElementSibling.innerHTML = 1;
                     addButton.disabled = false;
                     addButton.style.cursor = "pointer";
                     addButton.innerHTML = "add";
@@ -201,6 +202,7 @@ function deleteItem() {
         deleteButtons.forEach((deleteButton) => {
             deleteButton.parentElement.remove();
             addButtons.forEach((addButton) => {
+                addButton.previousElementSibling.firstElementChild.nextElementSibling.innerHTML = 1;
                 addButton.disabled = false;
                 addButton.style.cursor = "pointer";
                 addButton.innerHTML = "add";
@@ -209,3 +211,19 @@ function deleteItem() {
         });
     });
 }
+
+function confirmItems() {
+    const table = document.querySelector(".table");
+    const confirmButton = document.querySelector(".button_confirm");
+
+    confirmButton.addEventListener("click", () => {
+        if (table.childElementCount > 1) {
+            let result = confirm("Do you want to confirm?");
+            console.log(result);
+        } else {
+            alert("Your total is empty");
+        }
+    });
+}
+
+confirmItems();
