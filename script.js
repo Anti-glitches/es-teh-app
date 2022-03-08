@@ -12,7 +12,7 @@ const items = [
         fields: {
             flavour: "jambu",
             background:
-                "background: rgb(255,113,113); background: radial-gradient(circle, rgba(255,113,113,1) 0%, rgba(65,213,0,1) 100%);",
+                "background: rgb(247,202,202); background: radial-gradient(circle, rgba(247,202,202,1) 0%, rgba(255,100,100,1) 0%, rgba(0,175,5,1) 100%);",
         },
     },
     {
@@ -44,7 +44,7 @@ const items = [
         fields: {
             flavour: "sirsak",
             background:
-                "background: rgb(255,243,194); background: radial-gradient(circle, rgba(255,243,194,1) 2%, rgba(13,186,0,1) 64%, rgba(13,186,0,1) 100%);",
+                "background: rgb(170,255,173); background: radial-gradient(circle, rgba(170,255,173,1) 0%, rgba(0,175,5,1) 100%);",
         },
     },
     {
@@ -61,7 +61,7 @@ const items = [
         fields: {
             flavour: "stroberi",
             background:
-                "background: rgb(255,244,198); background: radial-gradient(circle, rgba(255,244,198,1) 33%, rgba(240,68,68,1) 100%);",
+                "background: rgb(255,144,144); background: radial-gradient(circle, rgba(255,144,144,1) 0%, rgba(255,0,0,1) 100%);",
         },
     },
 ];
