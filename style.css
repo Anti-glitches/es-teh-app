@@ -46,7 +46,8 @@ header h1 {
 
 /* item */
 .item {
-    background-color: #bcebf9;
+    background-color: #feffde;
+    /* background-color: #bcebf9; */
     padding: 20px 30px;
     border-radius: 5px;
     display: grid;
@@ -57,6 +58,7 @@ header h1 {
     grid-gap: 15px;
     min-width: 350px;
     width: 98%;
+    border: 2px solid rgb(63, 63, 63);
 }
 
 .item > * {
@@ -126,20 +128,26 @@ header h1 {
     grid-area: button;
     padding: 12px 15px;
     border-radius: 10px;
-    background-color: #70ffd9;
+    background-color: #e1ffde;
     font-weight: 800;
     border: none;
     cursor: pointer;
     font-size: 1.2em;
+    border: 2px solid rgb(63, 63, 63);
 }
 
 /* total summary */
 .total_summary {
     padding: 0 5vw;
     min-width: 350px;
+    margin-bottom: 100px;
 }
 
 /* table head */
+
+.table {
+    padding-bottom: 30px;
+}
 
 .table > * {
     display: grid;
@@ -186,6 +194,33 @@ header h1 {
     background-color: rgb(252, 90, 90);
     color: whitesmoke;
     justify-self: end;
+    border: 2px solid rgb(63, 63, 63);
+    cursor: pointer;
+}
+
+.button_group {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    height: 40px;
+}
+
+.button_group > * {
+    border: none;
+    font-size: 1.2em;
+    font-weight: 600;
+    height: 60px;
+    border-radius: 5px;
+    border: 2px solid rgb(63, 63, 63);
+    cursor: pointer;
+}
+
+.button_confirm {
+    margin-right: 20px;
+    background-color: #e1ffde;
+}
+
+.button_reset {
+    background-color: #ffdede;
 }
 
 @media screen and (min-width: 700px) {

@@ -89,21 +89,6 @@ function createItem() {
             <button class="item_button" data-id="${item.sys.id}">add</button>
         </div>
         `;
-        // result += `
-        //  <div class="item" data-id="${item.sys.id}">
-        //     <h2 class="item_title">${item.fields.flavour}</h2>
-        //         <div class="item_dateTime">
-        //             <h5 class="item_date">${date}</h5>
-        //             <h3 class="item_time">${time}</h3>
-        //         </div>
-        //     <div class="item_amount">
-        //         <button class="left">-</button>
-        //         <span class="number" data-id="${item.sys.id}">1</span>
-        //         <button class="right">+</button>
-        //     </div>
-        //     <button class="item_button" data-id="${item.sys.id}">add</button>
-        // </div>
-        // `;
     });
 
     menuItems.innerHTML = result;
@@ -165,7 +150,6 @@ function addToTotal() {
                 addButton.previousElementSibling.previousElementSibling
                     .previousElementSibling.innerHTML;
             console.log(`id: ${id}, amount: ${amount}, name: ${name}`);
-            // return { id: id, amount: amount, name: name };
 
             const table = document.querySelector(".table");
             const tableItem = document.createElement("div");
@@ -175,24 +159,53 @@ function addToTotal() {
                 <p class="table_item_qty">${amount}</p>
                 <p class="table_item_name">${name}</p>
                 <p class="table_item_time">${new Date().toLocaleTimeString()}</p>
-                <button class="table_item_delete">x</button>
+                <button class="table_item_delete" data-id="${id}">x</button>
             `;
 
             table.appendChild(tableItem);
+
+            // reset properties
+            addButton.previousElementSibling.firstElementChild.nextElementSibling.innerHTML = 1;
+            addButton.disabled = true;
+            addButton.style.cursor = "not-allowed";
+            addButton.innerHTML = "added";
+            addButton.style.background = "#FFDEDE";
+
+            deleteItem();
         });
     });
 }
 
 addToTotal();
 
-// function createTableItem() {
-//     const tableItem = document.createElement("div");
-//     tableItem.classList.add("table_item");
+function deleteItem() {
+    const deleteButtons = [...document.querySelectorAll(".table_item_delete")];
+    const addButtons = [...document.querySelectorAll(".item_button")];
+    const reset = document.querySelector(".button_reset");
 
-//     tableItem.innerHTML = `
-//         <p class="table_item_qty">${}</p>
-//         <p class="table_item_name">sirsak</p>
-//         <p class="table_item_time">17:00:34 PM</p>
-//         <button class="table_item_delete">x</button>
-//     `;
-// }
+    deleteButtons.forEach((deleteButton) => {
+        deleteButton.addEventListener("click", () => {
+            deleteButton.parentElement.remove();
+            addButtons.forEach((addButton) => {
+                if (addButton.dataset.id === deleteButton.dataset.id) {
+                    addButton.disabled = false;
+                    addButton.style.cursor = "pointer";
+                    addButton.innerHTML = "add";
+                    addButton.style.background = "#e1ffde";
+                }
+            });
+        });
+    });
+
+    reset.addEventListener("click", () => {
+        deleteButtons.forEach((deleteButton) => {
+            deleteButton.parentElement.remove();
+            addButtons.forEach((addButton) => {
+                addButton.disabled = false;
+                addButton.style.cursor = "pointer";
+                addButton.innerHTML = "add";
+                addButton.style.background = "#e1ffde";
+            });
+        });
+    });
+}
