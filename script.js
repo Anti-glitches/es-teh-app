@@ -76,10 +76,10 @@ function createItem() {
 
     items.forEach((item) => {
         result += `
-        <div class="item" data-id="${item.sys.id}">
+        <div class="item" data-id="${item.sys.id}" style="${item.fields.background}">
             <h2 class="item_title">${item.fields.flavour}</h2>
                 <div class="item_dateTime">
-                    <span class="logo" style="${item.fields.background}"></span>
+                    <span class="logo" ></span>
                 </div>
             <div class="item_amount">
                 <button class="left">-</button>
@@ -154,6 +154,7 @@ function addToTotal() {
             const table = document.querySelector(".table");
             const tableItem = document.createElement("div");
             tableItem.classList.add("table_item");
+            tableItem.setAttribute("data-id", id);
 
             tableItem.innerHTML = `
                 <p class="table_item_qty">${amount}</p>
@@ -219,11 +220,30 @@ function confirmItems() {
     confirmButton.addEventListener("click", () => {
         if (table.childElementCount > 1) {
             let result = confirm("Do you want to confirm?");
-            console.log(result);
+
+            if (result === true) {
+                let table_items = [...document.querySelectorAll(".table_item")];
+                let data = [];
+
+                table_items.forEach((table_item) => {
+                    console.log(table_item);
+                    data.push({
+                        sys: { id: table_item.dataset.id },
+                        fields: {
+                            flavour:
+                                table_item.firstElementChild.nextElementSibling
+                                    .innerHTML,
+                            quantity: table_item.firstElementChild.innerHTML,
+                            time: table_item.lastElementChild
+                                .previousElementSibling.innerHTML,
+                        },
+                    });
+                });
+                console.log(data);
+            }
         } else {
             alert("Your total is empty");
         }
     });
 }
-
 confirmItems();

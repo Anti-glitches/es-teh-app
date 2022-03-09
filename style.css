@@ -68,17 +68,16 @@ header h1 {
 .item_title {
     grid-area: title;
     font-size: 1.6em;
+    background-color: white;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
 }
 
 .item_dateTime {
     grid-area: time;
     display: grid;
     justify-items: center;
-}
-
-.item_dateTime > * {
-    margin: 0;
-    letter-spacing: 1px;
 }
 
 .logo {
@@ -128,7 +127,7 @@ header h1 {
     grid-area: button;
     padding: 12px 15px;
     border-radius: 10px;
-    background-color: #e1ffde;
+    background-color: #59f44b;
     font-weight: 800;
     border: none;
     cursor: pointer;
