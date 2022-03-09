@@ -24,7 +24,7 @@ button {
 
 /* header */
 header {
-    background-color: aliceblue;
+    background-color: rgb(125, 194, 255);
 }
 
 header h1 {
@@ -67,11 +67,14 @@ header h1 {
 
 .item_title {
     grid-area: title;
-    font-size: 1.6em;
-    background-color: white;
+    font-size: 1.4em;
+    background-color: #ffffffb8;
+    box-shadow: 4px 4px 0px #ffffff40;
     border-radius: 5px;
     width: 100%;
     text-align: center;
+    align-self: center;
+    padding: 4px 0;
 }
 
 .item_dateTime {
@@ -95,6 +98,7 @@ header h1 {
     justify-content: center;
     background-color: white;
     border-radius: 5px;
+    box-shadow: 4px 4px 0px #ffffff40;
 }
 
 .item_amount .number {
@@ -127,12 +131,12 @@ header h1 {
     grid-area: button;
     padding: 12px 15px;
     border-radius: 10px;
-    background-color: #59f44b;
+    background-color: #c2ffbc;
     font-weight: 800;
     border: none;
     cursor: pointer;
     font-size: 1.2em;
-    border: 2px solid rgb(63, 63, 63);
+    box-shadow: 4px 4px 0px #ffffff40;
 }
 
 /* total summary */

@@ -193,7 +193,7 @@ function deleteItem() {
                     addButton.disabled = false;
                     addButton.style.cursor = "pointer";
                     addButton.innerHTML = "add";
-                    addButton.style.background = "#e1ffde";
+                    addButton.style.background = "#c2ffbc";
                 }
             });
         });
@@ -207,7 +207,7 @@ function deleteItem() {
                 addButton.disabled = false;
                 addButton.style.cursor = "pointer";
                 addButton.innerHTML = "add";
-                addButton.style.background = "#e1ffde";
+                addButton.style.background = "#c2ffbc";
             });
         });
     });
